@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0CA8EE5-3365-4760-830D-66A81956425A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NullUnit.Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Document\AbstractDocument.cs" />
+    <Compile Include="Document\Events\DirtyFlagChangedEventArgs.cs" />
+    <Compile Include="Document\Events\FileNameChangedEventArgs.cs" />
+    <Compile Include="Document\Events\RedoStackDepthChangedEventArgs.cs" />
+    <Compile Include="Document\Events\UndoStackDepthChangedEventArgs.cs" />
+    <Compile Include="Document\IAction.cs" />
+    <Compile Include="Document\IDocument.cs" />
+    <Compile Include="Event\ChildEventBus.cs" />
+    <Compile Include="Event\EventRegistration.cs" />
+    <Compile Include="Event\IEventBus.cs" />
+    <Compile Include="Event\IEventRegistration.cs" />
+    <Compile Include="Event\SimpleEventBus.cs" />
+    <Compile Include="IAcceptsOneControl.cs" />
+    <Compile Include="IProvidesOneControl.cs" />
+    <Compile Include="Place\IPlace.cs" />
+    <Compile Include="Place\IPresenter.cs" />
+    <Compile Include="Place\IPresenterMapper.cs" />
+    <Compile Include="Place\PlaceController.cs" />
+    <Compile Include="Place\Presenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\BackgroundRunner.cs" />
+    <Compile Include="Utility\BackgroundRunnerParameters.cs" />
+    <Compile Include="Utility\CaseEventArgs.cs" />
+    <Compile Include="Utility\CaseFailEventArgs.cs" />
+    <Compile Include="Utility\ListEntryCaseEventArgs.cs" />
+    <Compile Include="Utility\ListEntrySuiteEventArgs.cs" />
+    <Compile Include="Utility\SuiteEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
