@@ -1,4 +1,4 @@
-// Copyright (c) 2011, Jonathan Clark
+// Copyright (c) 2011-2012, Jonathan Clark
 // All rights reserved.
 //
 // This software is licensed under the two-clause Simplified BSD License.
@@ -11,7 +11,6 @@
 
 #include <unordered_map>
 #include <vector>
-#include <boost/format.hpp>
 
 namespace NullUnit
 {
@@ -431,9 +430,7 @@ void NullUnit::XmlReporter::CaseFail(const std::string& suite_name, const std::s
 void NullUnit::XmlReporter::CaseStdExceptionFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& what, const std::string& filename, int lineNumber)
 {
-	addReportFail(suite_name, case_name,
-		boost::str(boost::format(Strings::UnhandledStdException) % what),
-		filename, lineNumber);
+	addReportFail(suite_name, case_name, Strings::MakeUnhandledStdExceptionString(what), filename, lineNumber);
 }
 
 void NullUnit::XmlReporter::CaseUnhandledExceptionFail(const std::string& suite_name, const std::string& case_name,

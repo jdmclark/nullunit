@@ -9,7 +9,6 @@ Documentation:
 
 Requirements:
 -------------
-	NullUnit requires boost::format and a compiler with partial C++11
-	support (TR1 and nested template closing with >>.)
+	NullUnit requires a compiler with partial C++11 support (TR1 and nested template closing with >>.)
 
-	Currently, build scripts are only provided for Visual Studio 2010.
+	Build scripts are provided for Visual Studio 2012 and GNU Make.

@@ -1,4 +1,4 @@
-// Copyright (c) 2011, Jonathan Clark
+// Copyright (c) 2011-2012, Jonathan Clark
 // All rights reserved.
 //
 // This software is licensed under the two-clause Simplified BSD License.
@@ -6,7 +6,6 @@
 // http://www.opensource.org/licenses/bsd-license.php
 
 #include <string>
-#include <boost/format.hpp>
 #include <algorithm>
 
 #include "t_gui_reporter.h"
@@ -101,8 +100,7 @@ void NullUnit::GuiReporter::CaseFail(const std::string& suite_name, const std::s
 void NullUnit::GuiReporter::CaseStdExceptionFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& what, const std::string& filename, int lineNumber)
 {
-	ReportCaseFail(suite_name, case_name,
-		boost::str(boost::format(Strings::UnhandledStdException) % what), filename, lineNumber);
+	ReportCaseFail(suite_name, case_name, Strings::MakeUnhandledStdExceptionString(what), filename, lineNumber);
 }
 
 void NullUnit::GuiReporter::CaseUnhandledExceptionFail(const std::string& suite_name, const std::string& case_name,

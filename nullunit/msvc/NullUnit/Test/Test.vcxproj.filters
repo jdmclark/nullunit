@@ -2,10 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\..\..\test\tt_assert_test.cpp" />
-    <ClCompile Include="..\..\..\test\tt_mock_reporter.cpp" />
+    <ClCompile Include="..\..\..\test\tt_case_order.cpp" />
     <ClCompile Include="..\..\..\test\tt_expect_test.cpp" />
     <ClCompile Include="..\..\..\test\tt_framework_test.cpp" />
-    <ClCompile Include="..\..\..\test\tt_case_order.cpp" />
+    <ClCompile Include="..\..\..\test\tt_mock_reporter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\test\tt_mock_reporter.h" />

@@ -1,81 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\nullunit\nullunit.h" />
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_assert.h" />
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_exception.h" />
-    <ClInclude Include="..\..\..\src\t_strings.h" />
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_autorun.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_singleton.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_uncopyable.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_case.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_casefac.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_casereg.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_fixture.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_suite.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_suitefac.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_suitereg.h">
-      <Filter>Suite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\t_gui_reporter.h">
-      <Filter>Report</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\nullunit\internal\t_reporter.h">
-      <Filter>Report</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\t_reporter_type.h">
-      <Filter>Report</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\t_stream_reporter.h">
-      <Filter>Report</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\t_xml_reporter.h">
-      <Filter>Report</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\src\t_exception.cpp" />
     <ClCompile Include="..\..\..\src\t_main.cpp" />
-    <ClCompile Include="..\..\..\src\t_fixture.cpp">
-      <Filter>Suite</Filter>
-    </ClCompile>
+    <ClCompile Include="..\..\..\src\t_exception.cpp" />
+    <ClCompile Include="..\..\..\src\t_fixture.cpp" />
     <ClCompile Include="..\..\..\src\t_gui_reporter.cpp">
-      <Filter>Report</Filter>
+      <Filter>Reporting</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\t_stream_reporter.cpp">
-      <Filter>Report</Filter>
+      <Filter>Reporting</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\t_xml_reporter.cpp">
-      <Filter>Report</Filter>
+      <Filter>Reporting</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\t_strings.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Report">
-      <UniqueIdentifier>{efdd54ca-ca15-45e8-92e2-7cae16a17593}</UniqueIdentifier>
+    <ClInclude Include="..\..\..\src\t_strings.h" />
+    <ClInclude Include="..\..\..\src\t_gui_reporter.h">
+      <Filter>Reporting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\t_reporter_type.h">
+      <Filter>Reporting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\t_stream_reporter.h">
+      <Filter>Reporting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\t_xml_reporter.h">
+      <Filter>Reporting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\nullunit.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_assert.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_autorun.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_case.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_casefac.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_casereg.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_exception.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_fixture.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_reporter.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_singleton.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_suite.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_suitefac.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_suitereg.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\nullunit\internal\t_uncopyable.h">
+      <Filter>Include\Internal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Reporting">
+      <UniqueIdentifier>{0b064553-058c-43e0-b183-afc0fd1a90b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Suite">
-      <UniqueIdentifier>{d06c8551-2691-4e6e-99ca-2d77c0dce5aa}</UniqueIdentifier>
+    <Filter Include="Include">
+      <UniqueIdentifier>{7f7b7b43-662f-4011-bdc3-a7ce91149c17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{3fca4f29-31ff-4c21-b014-83f1b4ddbd85}</UniqueIdentifier>
+    <Filter Include="Include\Internal">
+      <UniqueIdentifier>{5d56e49f-401d-44df-86c5-4f2e5d4e1439}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

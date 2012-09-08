@@ -1,4 +1,4 @@
-// Copyright (c) 2011, Jonathan Clark
+// Copyright (c) 2011-2012, Jonathan Clark
 // All rights reserved.
 //
 // This software is licensed under the two-clause Simplified BSD License.
@@ -6,8 +6,6 @@
 // http://www.opensource.org/licenses/bsd-license.php
 
 #include <string>
-
-#include <boost/format.hpp>
 
 #include "t_stream_reporter.h"
 #include "t_strings.h"
@@ -59,11 +57,11 @@ void NullUnit::StreamReporter::ReportBegin()
 
 void NullUnit::StreamReporter::ReportEnd()
 {
-	stream << boost::str(boost::format(Strings::TotalTestsPassed) % packageSuccesses) << std::endl;
+	stream << Strings::MakeTotalTestsPassedString(packageSuccesses) << std::endl;
 
 	if(packageFailures > 0)
 	{
-		stream << boost::str(boost::format(Strings::TotalTestsFailed) % packageFailures) << std::endl;
+		stream << Strings::MakeTotalTestsFailedString(packageFailures) << std::endl;
 	}
 }
 
@@ -78,8 +76,7 @@ void NullUnit::StreamReporter::SuiteEnd(const std::string& suite_name)
 
 	if(s_failure_ct > 0)
 	{
-		stream << boost::str(boost::format(Strings::SuiteFailedCases)
-			% suite_name % s_failure_ct) << std::endl;
+		stream << Strings::MakeSuiteFailedCasesString(suite_name, s_failure_ct) << std::endl;
 	}
 }
 
@@ -102,55 +99,47 @@ void NullUnit::StreamReporter::CaseFail(const std::string& suite_name, const std
 	const std::string& reason, const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % reason) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, reason) << std::endl;
 }
 
 void NullUnit::StreamReporter::CaseStdExceptionFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& what, const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name
-		% boost::str(boost::format(Strings::UnhandledStdException) % what)) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, Strings::MakeUnhandledStdExceptionString(what)) << std::endl;
 }
 
 void NullUnit::StreamReporter::CaseUnhandledExceptionFail(const std::string& suite_name,
 	const std::string& case_name, const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % Strings::UnhandledException) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, Strings::UnhandledException) << std::endl;
 }
 
 void NullUnit::StreamReporter::CaseAssertionFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& reason, const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % reason) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, reason) << std::endl;
 }
 
 void NullUnit::StreamReporter::CaseExpectationFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& reason, const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % reason) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, reason) << std::endl;
 }
 
 void NullUnit::StreamReporter::FixtureSetupFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % Strings::FixtureSetupFailure) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, Strings::FixtureSetupFailure) << std::endl;
 }
 
 void NullUnit::StreamReporter::FixtureTeardownFail(const std::string& suite_name, const std::string& case_name,
 	const std::string& filename, int lineNumber)
 {
 	AddFailure(suite_name);
-	stream << boost::str(boost::format(Strings::CaseFailedLine)
-		% filename % lineNumber % suite_name % case_name % Strings::FixtureTeardownFailure) << std::endl;
+	stream << Strings::MakeCaseFailedLineString(filename, lineNumber, suite_name, case_name, Strings::FixtureTeardownFailure) << std::endl;
 }

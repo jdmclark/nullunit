@@ -1,4 +1,4 @@
-// Copyright (c) 2011, Jonathan Clark
+// Copyright (c) 2011-2012, Jonathan Clark
 // All rights reserved.
 //
 // This software is licensed under the two-clause Simplified BSD License.
@@ -6,7 +6,6 @@
 // http://www.opensource.org/licenses/bsd-license.php
 
 #include <string>
-#include <boost/format.hpp>
 
 #include "nullunit/nullunit.h"
 #include "t_strings.h"
@@ -48,7 +47,7 @@ namespace NullUnit
 		if(caseFac == suite->GetCaseFactoryMap().end())
 		{
 			++failures;
-			std::cerr << boost::str(boost::format(Strings::InvalidCaseName) % suiteName % caseName) << std::endl;
+			std::cerr << Strings::MakeInvalidCaseNameString(suiteName, caseName) << std::endl;
 		}
 		else
 		{
@@ -80,7 +79,7 @@ namespace NullUnit
 			if(suiteFac == SuiteRegistry::Get().Factories.end())
 			{
 				++failures;
-				std::cerr << boost::str(boost::format(Strings::InvalidSuiteName) % it->first) << std::endl;
+				std::cerr << Strings::MakeInvalidSuiteNameString(it->first) << std::endl;
 			}
 			else
 			{
@@ -189,7 +188,7 @@ namespace NullUnit
 		if(caseFac == suite->GetCaseFactoryMap().end())
 		{
 			++failures;
-			std::cerr << boost::str(boost::format(Strings::InvalidCaseName) % suiteName % caseName) << std::endl;
+			std::cerr << Strings::MakeInvalidCaseNameString(suiteName, caseName) << std::endl;
 		}
 		else
 		{
@@ -225,7 +224,7 @@ namespace NullUnit
 			if(suiteFac == SuiteRegistry::Get().Factories.end())
 			{
 				++failures;
-				std::cerr << boost::str(boost::format(Strings::InvalidSuiteName) % it->first) << std::endl;
+				std::cerr << Strings::MakeInvalidSuiteNameString(it->first) << std::endl;
 			}
 			else
 			{
@@ -323,8 +322,7 @@ int main(int argc, char** argv)
 		}
 		else
 		{
-			std::cerr << boost::str(boost::format(NullUnit::Strings::IllegalArgument)
-				% arg) << std::endl;
+			std::cerr << NullUnit::Strings::MakeIllegalArgumentString(arg) << std::endl;
 			return 1;
 		}
 	}

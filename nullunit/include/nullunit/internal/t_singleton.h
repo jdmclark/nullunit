@@ -1,4 +1,4 @@
-// Copyright (c) 2011, Jonathan Clark
+// Copyright (c) 2011-2012, Jonathan Clark
 // All rights reserved.
 //
 // This software is licensed under the two-clause Simplified BSD License.
