@@ -35,16 +35,16 @@ TEST_OBJECT_FILES = $(subst /test/,/obj/test/,$(TEST_SOURCE_FILES:.cpp=.o))
 LIB_HEADER_FILES = $(wildcard $(BASE_PATH)/include/nullunit/*.h) \
 		$(wildcard $(BASE_PATH)/include/nullunit/internal/*.h)
 
+.DEFAULT: all
+.PHONY: all
+all: test
+	./$(TEST_OUTPUT)
+
 .PHONY: install
 install: all
 	mkdir -p $(HEADER_INSTALL_PATH) $(LIB_INSTALL_PATH)
 	cp -R $(BASE_PATH)/include/* $(HEADER_INSTALL_PATH)
 	cp $(LIB_PATH)/lib*.a $(LIB_INSTALL_PATH)
-
-.DEFAULT: all
-.PHONY: all
-all: test
-	./$(TEST_OUTPUT)
 
 .PHONY: test
 test: directory_structure $(TEST_OUTPUT)
