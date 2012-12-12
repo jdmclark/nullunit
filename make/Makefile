@@ -15,7 +15,7 @@ OBJ_PATH = $(BASE_PATH)/obj
 BIN_PATH = $(BASE_PATH)/bin
 LIB_PATH = $(BASE_PATH)/lib
 
-NU_OUTPUT = $(LIB_PATH)/nullunit.a
+NU_OUTPUT = $(LIB_PATH)/libnullunit.a
 TEST_OUTPUT = $(BIN_PATH)/test
 
 CPPFLAGS += -I$(BASE_PATH)/include
