@@ -15,6 +15,9 @@ OBJ_PATH = $(BASE_PATH)/obj
 BIN_PATH = $(BASE_PATH)/bin
 LIB_PATH = $(BASE_PATH)/lib
 
+HEADER_INSTALL_PATH = $(OUTDIR)usr/include
+LIB_INSTALL_PATH = $(OUTDIR)usr/lib
+
 NU_OUTPUT = $(LIB_PATH)/libnullunit.a
 TEST_OUTPUT = $(BIN_PATH)/test
 
@@ -31,6 +34,12 @@ TEST_OBJECT_FILES = $(subst /test/,/obj/test/,$(TEST_SOURCE_FILES:.cpp=.o))
 
 LIB_HEADER_FILES = $(wildcard $(BASE_PATH)/include/nullunit/*.h) \
 		$(wildcard $(BASE_PATH)/include/nullunit/internal/*.h)
+
+.PHONY: install
+install: all
+	mkdir -p $(HEADER_INSTALL_PATH) $(LIB_INSTALL_PATH)
+	cp -R $(BASE_PATH)/include/* $(HEADER_INSTALL_PATH)
+	cp $(LIB_PATH)/lib*.a $(LIB_INSTALL_PATH)
 
 .DEFAULT: all
 .PHONY: all

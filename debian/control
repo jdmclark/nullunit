@@ -1,0 +1,21 @@
+Source: libnullunit
+Priority: extra
+Maintainer: Jonathan Clark <jon@nullptr.ca>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Section: libs
+Homepage: http://code.google.com/p/nullunit
+Vcs-Git: https://code.google.com/p/nullunit
+Vcs-Browser: http://code.google.com/p/nullunit/source/browse
+
+Package: libnullunit-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: NullUnit testing framework for C++
+ NullUnit is a C++ unit testing framework. It was designed to let you create
+ elegant and easy to read test cases, without compromising on features. Based
+ on xUnit, supports automatic test discovery, user-defined assertions, fatal
+ and non-fatal conditions, XML test report generation, and offers strong
+ support for IDE integration.
+
