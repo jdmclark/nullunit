@@ -10,7 +10,7 @@
 #	make test - Build the library and test suite
 #	make clean - Removes temporary files.
 
-BASE_PATH = ..
+BASE_PATH = .
 OBJ_PATH = $(BASE_PATH)/obj
 BIN_PATH = $(BASE_PATH)/bin
 LIB_PATH = $(BASE_PATH)/lib
